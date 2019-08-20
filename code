@@ -1,0 +1,200 @@
+# ATM-Machine
+print("Welcome To KW Bank")
+print("Please Insert your card")
+No_of_Attempts = 5
+current_balance = 67000
+savings_balance = 200000
+while No_of_Attempts >= 0:
+    pin = int(input('Please Enter You 4 Digit Pin: '))
+    if pin == (1111):
+        print('You entered your pin Correctly')
+        print('Please Press 1 For Your Balance \n')
+        print('Please Press 2 To Make a Withdrawl \n')
+        print('Please Press 3 To Deposit Cash \n')
+        option = int(input('What Would you like to choose?'))
+        if option == 1:
+            print("Press 1 to Check balance of Current Account")
+            print("Press 2 to Check balance of Savings Account")
+            balance_selection = int(input("Press 1 or 2 for your choice of account"))
+            if (balance_selection==1):
+                print('Your Current Account Balance is Rs.{}'.format(current_balance))
+                print('Thank You')
+                break
+            if (balance_selection==2):
+                print('Your Savings Account Balance is Rs.{}'.format(savings_balance))
+                print('Thank You')
+                break
+            else:
+                print('Please enter a valid input')
+                restart = ('y')
+        elif option == 2:
+            print("Press 1 to withdraw amount from Current Account")
+            print("Press 2 to withdraw amount from Savings Account")
+            withdrawl_selection = int(input("Press 1 or 2 for your choice of account"))
+            if(withdrawl_selection==1):
+                print('You Are Withdrawing amount from Current Account')
+                withdrawl = int(input('Enter The Amount to be withdrawn'))
+                if ((withdrawl<=current_balance) & (withdrawl%100==0)) :
+                    current_balance = current_balance - withdrawl
+                    if(withdrawl>2000):
+                        n1=int(input("Enter number of 2000 notes you want"))
+                        w1=withdrawl-2000*n1
+                        if(w1>=500):
+                            n2=int(input("Enter number of 500 notes you want"))
+                            w2=w1-500*n2
+                            if(w2>=200):
+                                n3=int(input("Enter number of 200 notes you want"))
+                                w3=w2-200*n3
+                                if(withdrawl>=100):
+                                    n4=int(input("Enter number of 200 notes you want"))
+                                    w4=w3-200*n3
+                                else:
+                                    print('Your Remaining Current Account Balance is Rs.{}'.format(current_balance))
+                                    break
+                            else:
+                                print('Your Remaining Current Account Balance is Rs.{}'.format(current_balance))
+                                break
+                        else:
+                            print('Your Remaining Current Account Balance is Rs.{}'.format(current_balance))
+                            break
+                    elif(withdrawl>=500):
+                        n1=int(input("Enter number of 500 notes you want"))
+                        w1=withdrawl-500*n1
+                        if(w1>=200):
+                            n2=int(input("Enter number of 200 notes you want"))
+                            w2=w1-200*n2
+                            if(w2>=100):
+                                n3=int(input("Enter number of 200 notes you want"))
+                                w3=w2-100*n3
+                            else:
+                                print('Your Remaining Current Account Balance is Rs.{}'.format(current_balance))
+                                break
+                        else:
+                            print('Your Remaining Current Account Balance is Rs.{}'.format(current_balance))
+                            break
+                    elif(withdrawl>=200):
+                        n1=int(input("Enter number of 500 notes you want"))
+                        w1=withdrawl-200*n1
+                        if(w1>=100):
+                            n2=int(input("Enter number of 200 notes you want"))
+                            w2=w1-100*n2
+                        else:
+                            print('Your Remaining Current Account Balance is Rs.{}'.format(current_balance))
+                            break
+                    elif(withdrawl>=100):
+                        n1=int(input("Enter number of 500 notes you want"))
+                        w1=withdrawl-100*n1
+                        print ('\nYour Balance is now Rs.{}'.format(current_balance))
+                        restart = input('Would You you like to go back? ')
+                        if restart in ('n','NO','no','N'):
+                            print('Thank You')
+                            break
+                    elif(withdrawl<=99):
+                        print("Unable to proceed your request")
+                        break
+                elif withdrawl >= (current_balance+1):
+                    print('Invalid Amount, Please Re-try\n')
+                    restart = ('y')
+                elif withdrawl == 1:
+                    print("Enter amount in multiples of 100,200,500,2000")
+                elif withdrawl%100!=0:
+                    print("Please Enter amount in multiples of 100,200,500,2000")
+            if(withdrawl_selection==2):
+                print('You Are Withdrawing amount from Savings Account')
+                withdrawl = int(input('Enter The Amount to be withdrawn'))
+                if ((withdrawl<=savings_balance) & (withdrawl%100==0)):
+                    savings_balance = savings_balance - withdrawl
+                    if(withdrawl>2000):
+                        n1=int(input("Enter number of 2000 notes you want"))
+                        w1=withdrawl-2000*n1
+                        if(w1>=500):
+                            n2=int(input("Enter number of 500 notes you want"))
+                            w2=w1-500*n2
+                            if(w2>=200):
+                                n3=int(input("Enter number of 200 notes you want"))
+                                w3=w2-200*n3
+                                if(withdrawl>=100):
+                                    n4=int(input("Enter number of 200 notes you want"))
+                                    w4=w3-200*n3
+                                else:
+                                    print('Your Remaining Savings Account Balance is Rs.{}'.format(savings_balance))
+                                    break
+                            else:
+                                print('Your Remaining Savings Account Balance is Rs.{}'.format(savings_balance))
+                                break
+                        else:
+                            print('Your Remaining Savings Account Balance is Rs.{}'.format(savings_balance))
+                            break
+                    elif(withdrawl>=500):
+                        n1=int(input("Enter number of 500 notes you want"))
+                        w1=withdrawl-500*n1
+                        if(w1>=200):
+                            n2=int(input("Enter number of 200 notes you want"))
+                            w2=w1-200*n2
+                            if(w2>=100):
+                                n3=int(input("Enter number of 200 notes you want"))
+                                w3=w2-100*n3
+                            else:
+                                print('Your Remaining Savings Account Balance is Rs.{}'.format(savings_balance))
+                                break
+                        else:
+                            print('Your Remaining Savings Account Balance is Rs.{}'.format(savings_balance))
+                            break
+                    elif(withdrawl>=200):
+                        n1=int(input("Enter number of 500 notes you want"))
+                        w1=withdrawl-200*n1
+                        if(w1>=100):
+                            n2=int(input("Enter number of 200 notes you want"))
+                            w2=w1-100*n2
+                        else:
+                            print('Your Remaining Savings Account Balance is Rs.{}'.format(savings_balance))
+                            break
+                    elif(withdrawl>=100):
+                        n1=int(input("Enter number of 500 notes you want"))
+                        w1=withdrawl-100*n1
+                        print ('\nYour Balance is now Rs.{}'.format(current_balance))
+                        restart = input('Would You you like to go back? ')
+                        if restart in ('n','NO','no','N'):
+                            print('Thank You')
+                            break
+                    elif(withdrawl<=99):
+                        print("Unable to proceed your request")
+                        break
+                elif withdrawl >= (savings_balance+1):
+                    print('Invalid Amount, Please Re-try\n')
+                    restart = ('y')
+                elif withdrawl == 1:
+                    print("Enter amount in multiples of 100,200,500,2000")
+                elif withdrawl%100!=0:
+                    print("Enter amount in multiples of 100,200,500,2000")
+            else:
+                print("Please Enter a valid input")
+                restart = ('y')
+        elif option == 3:
+            Deposit_Cash = int(input('How Much Would You Like To Deposit.\nPlease enter amount in multiple of 100,200,500,20000 '))
+            print("Press 1 to deposit amount to Current Account")
+            print("Press 2 to deposit amount to Savings Account")
+            Deposit_Selection=int(input("Select Account to which you want to deposit money"))
+            if (Deposit_Selection==1):
+                current_balance = current_balance + Deposit_Cash
+                print ('\nYour Balance is now Rs.{}'.format(current_balance))
+                print('Thank You')
+                break
+            if (Deposit_Selection==2):
+                savings_balance = savings_balance + Deposit_Cash
+                print ('\nYour Balance is now Rs.{}'.format(savings_balance))
+                print('Thank You')
+                break
+            else:
+                print('Please select a valid input')
+                print('Thank You')
+                break
+        else:
+            print('Please Enter a correct number. \n')
+            restart = ('y')
+    elif pin != 1111:
+        print('Incorrect Password')
+        No_of_Attempts = No_of_Attempts - 1
+        if No_of_Attempts == 0:
+            print('\nNo more tries')
+            break
